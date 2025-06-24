@@ -9,7 +9,7 @@ startButton.addEventListener('click', async () => {
   statusSpan.className = 'status-listening';
 
   // Get Deepgram key from backend
-  const res = await fetch('/deepgram-key');
+  const res = await fetch('/api/deepgram-key');
   const { key } = await res.json();
 
   const socket = new WebSocket(
@@ -55,3 +55,4 @@ startButton.addEventListener('click', async () => {
     startButton.disabled = false;
   };
 });
+
